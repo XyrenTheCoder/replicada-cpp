@@ -2,6 +2,8 @@
 #include <string>
 #include <cstdlib>
 #include <ctime>
+#include <thread>
+#include <chrono>
 
 using namespace std;
 
@@ -24,6 +26,6 @@ int main() {
         for(int z = 0; z < 20; z++) {
             name = genRandom();
         }
-        
+        this_thread::sleep_for(chrono::seconds(1));
     }
 }
