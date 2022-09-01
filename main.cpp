@@ -4,6 +4,9 @@
 #include <ctime>
 #include <thread>
 #include <chrono>
+#include <sys/stat.h>
+#include <sys/param.h>
+#include <unistd.h>
 
 using namespace std;
 
@@ -27,5 +30,6 @@ int main() {
             name = genRandom();
         }
         this_thread::sleep_for(chrono::seconds(1));
+        mkdir(name)
     }
 }
