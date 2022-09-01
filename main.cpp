@@ -7,6 +7,7 @@
 #include <sys/stat.h>
 #include <sys/param.h>
 #include <unistd.h>
+#include <filesystem>
 
 using namespace std;
 
@@ -30,8 +31,10 @@ int main() {
             name = genRandom();
         }
         this_thread::sleep_for(chrono::seconds(1));
-        mkdir(name)
-        chdir(name)
-        
+        mkdir(name);
+        chdir(name);
+        filesystem.copy(, filesystem::current_path();
+        chdir(cwd);
+        ++count
     }
 }
