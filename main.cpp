@@ -33,7 +33,7 @@ int main() {
         this_thread::sleep_for(chrono::seconds(1));
         mkdir(name);
         chdir(name);
-        filesystem.copy(, filesystem::current_path());
+        filesystem.copy("../", filesystem::current_path());
         chdir(cwd);
         ++count;
     }
